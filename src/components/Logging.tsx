@@ -38,8 +38,8 @@ const Logging = () => {
             </span>
           </div>
            {/* ============== FORM ==================  */}
-          <form className='pb-1' onSubmit={formik.handleSubmit}>
-              <div className='profile flex justify-center py-4'>
+          <form className='pb-1 h-80' onSubmit={formik.handleSubmit}>
+              <div className='profile flex justify-center py-6'>
                   <img src={avatar} className={styles.profile_img} alt="avatar" />
               </div>
                 
