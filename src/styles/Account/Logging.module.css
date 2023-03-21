@@ -1,0 +1,55 @@
+
+
+/* THis component is helping us to write both css and tailwind in the same css file   */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500&display=swap');
+
+
+/* Adding in the universak using the * */
+
+
+*{
+  
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    background-image: url('../.././assets/Background.png');
+    background-size: cover;
+    background-position: center;
+   
+  }
+  
+
+/*  */
+.formContainer{
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #4747470b;
+    backdrop-filter: blur(7.1px);
+  
+    @apply border-4  lg:h-[50rem]   w-[40%]  shadow-xl rounded-3xl py-40 px-7 min-w-max border-gray-100;
+}
+
+/* PROFILE IMAGE FOR THE  LONGING  IMAGE  */
+.profile_img{
+    @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-pointer;
+    @apply hover:border-gray-200;
+}
+
+/* INPUT SECTION FOR USERNAME  */
+.textbox{
+    @apply border-0 px-5 py-4 rounded-xl w-3/4 shadow-sm text-lg;
+    @apply focus:outline-none;
+    @apply border-2 border-gray-100 focus:border-gray-200;
+  
+}
+
+/* BUTTON */
+.btn{
+    @apply border border-blue-800    bg-blue-800 w-3/4 py-4 rounded-lg  text-xl shadow-sm text-center text-white;
+    @apply bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 focus:outline-none focus:ring-2 
+}
+
+
