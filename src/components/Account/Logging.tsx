@@ -12,7 +12,7 @@ const Logging = () => {
   // for the username validation
   const formik = useFormik({
     initialValues: {
-      username: "",
+      username: "", //  username is the name of the input field
     },
     validate: usernameValidate,
     validateOnBlur: false,
@@ -21,29 +21,6 @@ const Logging = () => {
       console.log(values);
     },
   });
-
-  // for the  password validation
-
-  const PasssFomrik = useFormik({
-    initialValues: {
-      password: "",
-    },
-
-    validate: passwordValidate,
-    validateOnBlur: false,
-    validateOnChange: false,
-    onSubmit: async (values) => {
-      console.log(values);
-    },
-  });
-
-  // this function will be called when the user click on the submit button
-
-  const ValliatePasswordUerNmae = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    formik.validateForm();
-    PasssFomrik.validateForm();
-  };
 
   return (
     <div className="container mx-auto">
@@ -59,7 +36,7 @@ const Logging = () => {
             </span>
           </div>
           {/* ============== FORM ==================  */}
-          <form className="pb-1 h-80" onSubmit={ValliatePasswordUerNmae}>
+          <form className="pb-1 h-80" onSubmit={formik.handleSubmit}>
             <div className="profile flex justify-center py-6">
               <img src={avatar} className={styles.profile_img} alt="avatar" />
             </div>
@@ -71,12 +48,6 @@ const Logging = () => {
                 className={styles.textbox}
                 type="text"
                 placeholder="Username"
-              />
-              <input
-                {...PasssFomrik.getFieldProps("password")}
-                className={styles.textbox}
-                type="password"
-                placeholder="Password"
               />
 
               <button className={styles.btn}>Let go </button>
